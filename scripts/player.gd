@@ -2,12 +2,15 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
-
+@onready var game_manager = %GameManager
+@export var Dagger : PackedScene
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -19,6 +22,10 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		jump_sound.play()
 		
+	if Input.is_action_just_pressed("attack"):
+		if game_manager.daggers > 0:
+			game_manager.remove_dagger()
+			
 
 	# Gets movement input: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")

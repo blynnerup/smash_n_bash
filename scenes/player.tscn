@@ -190,3 +190,6 @@ shape = SubResource("CircleShape2D_u7hea")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_iwalh")
 bus = &"SFX"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(12, -5)

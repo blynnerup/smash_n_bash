@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am1ue"]
 size = Vector2(11, 12)
 
-[node name="Area2D" type="Area2D"]
+[node name="DaggerPickup" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_a3s43")
 
