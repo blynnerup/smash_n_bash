@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bf2g5lslk478c"]
+[gd_scene load_steps=19 format=3 uid="uid://bf2g5lslk478c"]
 
 [ext_resource type="PackedScene" uid="uid://7puvymdu4nop" path="res://scenes/player.tscn" id="1_bfgxo"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_xee4y"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cpt30eqa4plvb" path="res://scenes/platform.tscn" id="3_8miwx"]
 [ext_resource type="PackedScene" uid="uid://dgy6dycbgly2w" path="res://scenes/coin.tscn" id="4_brj0v"]
 [ext_resource type="PackedScene" uid="uid://b71f1lvr8fg5h" path="res://scenes/killzone.tscn" id="5_75v58"]
+[ext_resource type="PackedScene" uid="uid://b7wyt6d385tpc" path="res://scenes/dagger_thrown.tscn" id="5_sh3eh"]
 [ext_resource type="PackedScene" uid="uid://uqqamqoekcuj" path="res://scenes/slime.tscn" id="6_xwv3g"]
 [ext_resource type="FontFile" uid="uid://l4nu41wnvpb4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_aaf7y"]
 [ext_resource type="FontFile" uid="uid://conji77rvkjv0" path="res://assets/fonts/PixelOperator8.ttf" id="7_fce3b"]
 [ext_resource type="PackedScene" uid="uid://bodwf4reushjh" path="res://scenes/DaggerPickup.tscn" id="10_q2vwg"]
+[ext_resource type="PackedScene" uid="uid://dbdpx2ot3ntr7" path="res://scenes/fruit.tscn" id="12_20pn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3r4s5"]
 texture = ExtResource("2_dtv0k")
@@ -483,6 +485,7 @@ layer_1/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 2, 1, 0, -131068, 1, 0, -
 
 [node name="Player" parent="." instance=ExtResource("1_bfgxo")]
 position = Vector2(-398, -34)
+Dagger = ExtResource("5_sh3eh")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, -9)
@@ -582,3 +585,6 @@ autoplay = "move"
 
 [node name="Area2D" parent="." instance=ExtResource("10_q2vwg")]
 position = Vector2(-207, -28)
+
+[node name="Fruit" parent="." instance=ExtResource("12_20pn8")]
+position = Vector2(-168, -28)

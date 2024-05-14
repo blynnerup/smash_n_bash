@@ -192,4 +192,4 @@ stream = ExtResource("3_iwalh")
 bus = &"SFX"
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(12, -5)
+position = Vector2(14, -6)

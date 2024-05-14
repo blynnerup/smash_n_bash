@@ -53,6 +53,7 @@ frame = 3
 frame_progress = 0.717645
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_v087e")]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
 position = Vector2(0, 5.5)
