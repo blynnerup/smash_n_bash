@@ -23,9 +23,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		jump_sound.play()
 		
-	if Input.is_action_just_pressed("attack"): shoot()
-		
-	
 	# Gets movement input: -1, 0, 1
 	var direction = Input.get_axis("move_left", "move_right")
 	
@@ -34,7 +31,9 @@ func _physics_process(delta):
 		animated_sprite.flip_h = true
 	elif direction > 0:
 		animated_sprite.flip_h = false
-		
+	
+	if Input.is_action_just_pressed("attack"): shoot()
+	
 	# Play animation
 	if is_on_floor():
 		if direction == 0:
@@ -53,8 +52,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func shoot():
+func shoot(facing):
 	var dagger: Dagger = Dagger.instantiate()
 	owner.add_child(dagger)
 	dagger.transform = get_node("Marker2D").global_transform
-	#game_manager.remove_dagger()
+	dagger.direction = facing
+	game_manager.remove_dagger()
